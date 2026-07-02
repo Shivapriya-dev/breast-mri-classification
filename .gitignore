@@ -1,0 +1,17 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Streamlit cache
+.streamlit/secrets.toml
+
+# OS files
+.DS_Store
+Thumbs.db
+models/*.keras
