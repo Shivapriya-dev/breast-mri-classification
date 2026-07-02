@@ -221,18 +221,18 @@ if uploaded_file is not None:
     </div>
     """, unsafe_allow_html=True)
 
-    if st.checkbox("Show Grad-CAM Explanation"):
-        heatmap = make_gradcam_heatmap(img_preprocessed, model)
+    # if st.checkbox("Show Grad-CAM Explanation"):
+    #     heatmap = make_gradcam_heatmap(img_preprocessed, model)
 
-        if heatmap is not None:
-            heatmap = cv2.resize(heatmap, IMG_SIZE)
-            heatmap = np.uint8(255 * heatmap)
-            heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_JET)
-            superimposed = heatmap * 0.4 + img
+    #     if heatmap is not None:
+    #         heatmap = cv2.resize(heatmap, IMG_SIZE)
+    #         heatmap = np.uint8(255 * heatmap)
+    #         heatmap = cv2.applyColorMap(heatmap, cv2.COLORMAP_JET)
+    #         superimposed = heatmap * 0.4 + img
 
-            st.image(superimposed.astype("uint8"),
-                     caption="Grad-CAM Visualization",
-                     width="stretch")
+    #         st.image(superimposed.astype("uint8"),
+    #                  caption="Grad-CAM Visualization",
+    #                  width="stretch")
 
 st.markdown("</div>", unsafe_allow_html=True)
 st.markdown("</div>", unsafe_allow_html=True)  # close content-section
