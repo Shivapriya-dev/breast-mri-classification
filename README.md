@@ -9,7 +9,7 @@ The application is built using **TensorFlow**, **Streamlit**, and **Transfer Lea
 ## 🚀 Live Demo
 
 👉 Streamlit App:
-https://chatgpt.com/s/t_6a468b1b23988191984fd9e3d631c4f1
+https://breast-mri-classification-wbm8vo4kaxjersnghph4ml.streamlit.app/
 
 ---
 
