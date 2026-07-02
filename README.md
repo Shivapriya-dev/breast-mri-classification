@@ -224,6 +224,19 @@ This project was developed for:
 
 ---
 
+## 👥 Team Contributions
+
+This project was developed collaboratively, with each team member contributing to different stages of model development and evaluation.
+
+| Team Member | Contribution |
+|------------|--------------|
+| **Adhila Mansoor** | Trained and evaluated the DenseNet121 model. |
+| **Elsi C. Pate** | Trained and evaluated the ConvNeXt-Tiny model. |
+| **Zuha Fathima** | Trained and evaluated the ResNet50 model. |
+| **Shivapriya Sreejith** | Trained the EfficientNetB0 model, integrated all trained models into the Streamlit application, implemented automatic model downloading from Google Drive, conducted testing and validation of all models, and deployed the application on Streamlit Cloud. |
+
+---
+
 # Disclaimer
 
 This software is intended solely for educational and research purposes.
