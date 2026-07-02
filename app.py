@@ -2,11 +2,36 @@ import streamlit as st
 import tensorflow as tf
 import numpy as np
 import cv2
+import os
+import gdown
 from PIL import Image
 from tensorflow.keras.applications.efficientnet import preprocess_input
 from tensorflow.keras.models import Model
 
 IMG_SIZE = (224, 224)
+
+os.makedirs("models", exist_ok=True)
+
+MODEL_FILES = {
+    "efficientnet_b0_breast_mri22.keras": "1NeQOG2GH-fFshHCjkS2_W1n3iBJml5vT",
+    "convnext_tiny_breast_mri.keras": "17XgJQuG49fmcpIsrIDp6vZLtzsLVkjLZ",
+    "resnet50updated_breast_mri.keras": "1ZJ6rp4uf7ttOegXEKGiSWw2KYiQQDkgi",
+    "densenet121.keras": "1ocRG_Qb-lG6K-AuQPGPZTaX7mc68QZX7",
+}
+
+def download_models():
+    for filename, file_id in MODEL_FILES.items():
+        filepath = os.path.join("models", filename)
+
+        if not os.path.exists(filepath):
+            st.info(f"Downloading {filename}... Please wait.")
+            gdown.download(
+                f"https://drive.google.com/uc?id={file_id}",
+                filepath,
+                quiet=False
+            )
+
+download_models()
 
 @st.cache_resource
 def load_models():
