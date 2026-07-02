@@ -30,9 +30,6 @@ def download_models():
                 filepath,
                 quiet=False
             )
-            st.write("Downloaded:", success)
-            st.write("Exists:", os.path.exists(filepath))
-
 
 download_models()
 
