@@ -25,21 +25,24 @@ def download_models():
 
         if not os.path.exists(filepath):
             st.info(f"Downloading {filename}... Please wait.")
-            gdown.download(
+            success = gdown.download(
                 f"https://drive.google.com/uc?id={file_id}",
                 filepath,
                 quiet=False
             )
+            st.write("Downloaded:", success)
+            st.write("Exists:", os.path.exists(filepath))
+
 
 download_models()
 
 @st.cache_resource
 def load_models():
     return {
-        "EfficientNetB0": tf.keras.models.load_model("models\efficientnet_b0_breast_mri22.keras"),
-        "ResNet50": tf.keras.models.load_model("models\\resnet50updated_breast_mri.keras"),
-        "DenseNet121": tf.keras.models.load_model("models\densenet121.keras"),
-        "ConvNeXtTiny": tf.keras.models.load_model("models\convnext_tiny_breast_mri.keras")
+        "EfficientNetB0": tf.keras.models.load_model("models/efficientnet_b0_breast_mri22.keras"),
+        "ResNet50": tf.keras.models.load_model("models/resnet50updated_breast_mri.keras"),
+        "DenseNet121": tf.keras.models.load_model("models/densenet121.keras"),
+        "ConvNeXtTiny": tf.keras.models.load_model("models/convnext_tiny_breast_mri.keras")
     }
 
 models = load_models()
